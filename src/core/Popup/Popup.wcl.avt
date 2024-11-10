@@ -1,0 +1,62 @@
+export class Popup extends Aventus.WebComponent implements Aventus.DefaultComponent {
+
+    //#region static
+
+    //#endregion
+
+
+    //#region props
+    @Property()
+    public active!: boolean;
+    //#endregion
+
+
+    //#region variables
+    @Watch()
+    protected vertical!: boolean;
+    @Watch()
+    protected titleText!: string;
+    @Watch()
+    protected description!: string;
+    @Watch()
+    protected picturePath!: string;
+    //#endregion
+
+
+    //#region constructor
+    //#endregion
+
+
+    //#region methods
+    public show(title: string, description: string, imagePath: string, vertical: boolean = false) {
+        this.titleText = title;
+        this.description = description;
+        this.picturePath = imagePath;
+        this.vertical = vertical;
+        this.active = true;
+    }
+
+    protected hide() {
+        this.active = false;
+    }
+
+
+    /**
+     * 
+     */
+    protected preventProp(a, b, c, d) {
+		a.preventDefault();
+		a.stopPropagation();
+    }
+    //#endregion
+
+    protected override postCreation(): void {
+        window.showPopup = (title, description, imagePath, vertical = false) => {
+            this.show(title, description, imagePath, vertical);
+        };
+    }
+
+}
+declare global {
+    interface Window { showPopup: (title: string, description: string, imagePath: string, vertical:boolean = false) => void; }
+}

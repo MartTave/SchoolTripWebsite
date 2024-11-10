@@ -1,0 +1,36 @@
+{
+    "module": "SchoolTripWebsite",
+    "componentPrefix": "av",
+    "avoidParsingInsideTags": [
+        "av-code"
+    ],
+    "build": [
+        {
+            "name": "Main",
+            "hideWarnings": true,
+            "src": [
+                "./src/core/*"
+            ],
+            "compile": [
+                {
+                    "output": "./dist/schoolTrip.js"
+                }
+            ],
+            "dependances": [
+                {
+                    "uri": "@Aventus"
+                }
+            ]
+        }
+    ],
+    "static": [
+        {
+            "name": "Main_Static",
+            "input": "./src/static/",
+            "output": "./dist/"
+        }
+    ],
+    "aliases": {
+        "@root": "./src/"
+    }
+}

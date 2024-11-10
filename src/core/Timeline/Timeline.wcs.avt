@@ -1,0 +1,39 @@
+:host {
+    --point-size: 30px;
+    --event-height: 200px;
+    --gap: 10px;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+	.timeline {
+        background-color: green;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        gap: var(--gap);
+        padding: 10px;
+
+        av-timeline-event:not(:first-child) {
+            &::before {
+                content: "";
+                height: calc((var(--event-height) + var(--gap)) / 2);
+                width: 4px;
+                background-color: black;
+                position: absolute;
+                left: 43px;
+                top: 0px;
+            }
+        }
+        av-timeline-event:not(:last-child) {
+            &::after {
+                content: "";
+                height: calc((var(--event-height) + var(--gap)) / 2);
+                width: 4px;
+                background-color: black;
+                position: absolute;
+                left: 43px;
+                top: calc((var(--event-height) + var(--gap)) / 2);
+            }
+        }
+    }
+}

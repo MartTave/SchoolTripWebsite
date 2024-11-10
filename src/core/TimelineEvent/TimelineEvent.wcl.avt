@@ -1,0 +1,48 @@
+export class TimelineEvent extends Aventus.WebComponent implements Aventus.DefaultComponent {
+
+    //#region static
+
+    //#endregion
+
+
+    //#region props
+
+    //#endregion
+
+
+    //#region variables
+    public eventTitle: string = "";
+    public eventDesc: string = "";
+    public eventPicturePath: string = "";
+    public eventDate: string = "";
+    public isVertical: boolean = false;
+
+
+    @ViewElement()
+    protected dateContainer!: HTMLDivElement;
+    @ViewElement()
+    protected titleContainer!: HTMLDivElement;
+
+    //#endregion
+
+
+    //#region constructor
+
+    //#endregion
+
+
+    //#region methods
+    public rebuild() {
+        this.dateContainer.textContent = this.eventDate;
+        this.titleContainer.textContent = this.eventTitle;
+    }
+
+    /**
+     * 
+     */
+    protected pressed() {
+        window.showPopup(this.eventTitle, this.eventDesc, this.eventPicturePath, this.isVertical);
+    }
+    //#endregion
+
+}

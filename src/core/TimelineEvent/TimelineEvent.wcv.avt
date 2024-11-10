@@ -1,0 +1,5 @@
+<div class="event" @click="pressed">
+    <div class="point"></div>
+    <div class="date" @element="dateContainer" ></div>
+    <div class="title" @element="titleContainer" ></div>
+</div>

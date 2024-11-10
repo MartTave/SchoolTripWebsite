@@ -1,0 +1,26 @@
+<div class="background" @click="hide">
+
+    <div class="popup" @click="preventProp">
+        <div class="close" @click="hide" ></div>
+        if (this.vertical) {
+            <div class="line">
+                <div class="picture">
+                    <img src="pictures/{{ this.picturePath }}" alt="">
+                </div>
+                <div class="title" >{{ this.titleText }}</div>
+            </div>
+        } else {
+            <div class="col">
+                <div class="title" >{{ this.titleText }}</div>
+                <div class="picture">
+                    <img src="pictures/{{ this.picturePath }}" alt="">
+                </div>
+            </div>
+        }
+        <div class="separator"></div>
+        <div class="descriptionContainer">
+            <div class="description">{{ this.description }}</div>
+        </div>
+    </div>
+
+</div>

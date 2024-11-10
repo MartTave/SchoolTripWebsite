@@ -1,0 +1,81 @@
+import { TimelineEvent } from "../TimelineEvent/TimelineEvent.wcl.avt";
+
+export class Timeline extends Aventus.WebComponent implements Aventus.DefaultComponent {
+
+    //#region static
+
+    //#endregion
+
+
+    //#region props
+
+    //#endregion
+
+
+    //#region variables
+    @ViewElement()
+    protected container!: HTMLDivElement;
+
+    protected events: any = [
+        {
+            "date": "2021-01-01",
+            "title": "Event 1",
+            "image": "image1.jpg",
+            "description": "Description 1"
+        },
+        {
+            "date": "28 septembre 2024",
+            "title": "À la découverte des drones explorateurs",
+            "image": "drone.jpg",
+            "isVertical": true,
+            "description": "Arrivés dans le canton de Vaud, nous avons pu visiter FlyAbility, une start-up située près de Lausanne et impliquée dans la fabrication de drones. L'objectif principal de ces drones est de pouvoir explorer des zones dangereuses pour l'homme. J'ai trouvé cette visite très intéressante, on peut voir la passion qu'ils mettent dans la fabrication de leurs produits, cherchant toujours à les améliorer d'année en année que ce soit au niveau du hardware ou du software."
+        },
+        {
+            "date": "29 septembre 2024",
+            "title": "La découverte du géant Cisco",
+            "image": "cisco.jpg",
+            "isVertical": false,
+            "description": `Exploration de l'univers de Cisco: un leader mondial dans les solutions de réseautage et de télécommunications. 
+
+   Nous avons découvert les dernières avancées technologiques dans les routeurs Cisco, incluant la version la plus récente de leur technologie Wi-Fi, offrant des vitesses de transmission accrues, une couverture étendue et une gestion plus intelligente du réseau.
+
+   Une démonstration du prototype de routeur physique de Cisco, mettant en avant les spécifications techniques et les caractéristiques de conception.
+
+   Cisco propose des solutions de réseautage flexibles, combinant des infrastructures cloud et sur site. Ces modèles  permettent aux entreprises de s'adapter aux besoins variés des réseaux modernes, tout en garantissant sécurité, évolutivité et performance.
+
+   Un point essentiel du réseau sans fil est l'Access Point. Ils améliorent la connectivité et la gestion des réseaux sans fil pour les entreprises.`
+        },
+        {
+            "date": "2021-01-01",
+            "title": "Event 1",
+            "image": "image1.jpg",
+            "description": "Description 1"
+        }
+    ];
+    //#endregion
+
+
+    //#region constructor
+
+    //#endregion
+
+
+    //#region methods
+    public buildContainer() {
+
+        for(let obj of this.events) {
+            const el = new TimelineEvent();
+            el.eventDate = obj["date"];
+            el.eventDesc = obj["description"];
+            el.eventPicturePath = obj["image"];
+            el.eventTitle = obj["title"];
+            el.isVertical = obj["isVertical"];
+            el.rebuild();
+            this.container.appendChild(el);
+        }
+    }
+    //#endregion
+    public override postCreation(): void {
+        this.buildContainer()
+    }
+}
