@@ -1,5 +1,14 @@
 <div class="page">
-    AHAHAHAHHA
+    <h1>Le voyage dans les contrées légendaires</h1>
+    <div class="firstSection">
+        <div class="videoPreview">
+            <a href="pictures/isc_trip.mp4" target="_blank" class="more">More...</a>
+            <video src="pictures/isc_trip.mp4" muted autoplay loop></video>
+        </div>
+        <div class="intro">
+            Bienvenue sur la page récitant toues les aventures de la classe ISC. Sur cette page, vous allez revivre toutes nos aventures comme nous les avons vécues
+        </div>
+    </div>
     <av-timeline>
     </av-timeline>
 </div>

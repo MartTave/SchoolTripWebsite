@@ -4547,7 +4547,7 @@ this.__addWatchesActions("description");
 this.__addWatchesActions("picturePath");
     super.__registerWatchesActions();
 }
-    static __style = `:host{width:100vw;height:100vh;display:flex;align-items:center;justify-content:center;position:relative;position:absolute}:host:host:not([active]){top:100vh;left:100vw}:host:host([active]){top:0;left:0}:host .background{background-color:rgba(255,255,255,.7);position:relative;width:100%;height:100%;padding:75px}:host .popup{box-shadow:0px 0px 20px 5px rgba(0,0,0,.75);border:1px solid #000;width:100%;height:100%;background-color:#fff;border-radius:15px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center}:host .popup .close{position:absolute;top:15px;right:15px;width:25px;height:25px;display:flex;align-items:center;justify-content:center;cursor:pointer}:host .popup .close::after,:host .popup .close::before{position:absolute;content:"";width:25px;height:5px;background-color:#000;border-radius:5px}:host .popup .close::before{transform:rotate(45deg)}:host .popup .close::after{transform:rotate(-45deg)}:host .popup .title{display:flex;align-items:center;font-size:30px;font-weight:bold}:host .popup .picture{overflow:hidden;border-radius:10px}:host .popup .line{display:flex;padding:10px;gap:25px;width:100%;justify-content:space-between}:host .popup .line .picture{overflow:hidden;height:400px;max-height:400px}:host .popup .line .picture img{max-height:100%;width:auto}:host .popup .line .title{width:calc(100% - 275px)}:host .popup .col{display:flex;flex-direction:column;align-items:center;padding:0 20px}:host .popup .col .picture{display:flex;width:calc(100% - 30px)}:host .popup .col .picture img{width:100%}:host .popup .col .title{padding:25px 0;width:100%;justify-content:center}:host .popup .separator{height:3px;background-color:#000;width:80%;display:flex;align-items:center;justify-content:center;margin-top:15px}:host .popup .descriptionContainer{padding:25px;width:100%;flex-grow:1;overflow-y:scroll;position:relative}:host .popup .descriptionContainer .description{font-size:20px;word-spacing:3px;line-height:25px}`;
+    static __style = `:host{width:100vw;height:100vh;display:flex;align-items:center;justify-content:center;position:relative;position:absolute}:host:host:not([active]){top:100vh;left:100vw}:host:host([active]){top:0;left:0}:host .background{background-color:rgba(255,255,255,.7);position:relative;width:100%;height:100%;padding:75px}:host .popup{box-shadow:0px 0px 20px 5px rgba(0,0,0,.75);width:100%;height:100%;background-color:#fff;border-radius:15px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center}:host .popup .close{position:absolute;top:15px;right:15px;width:25px;height:25px;display:flex;align-items:center;justify-content:center;cursor:pointer}:host .popup .close::after,:host .popup .close::before{position:absolute;content:"";width:25px;height:5px;background-color:#000;border-radius:5px}:host .popup .close::before{transform:rotate(45deg)}:host .popup .close::after{transform:rotate(-45deg)}:host .popup .title{display:flex;align-items:center;font-size:30px;font-weight:bold}:host .popup .picture{overflow:hidden;border-radius:10px}:host .popup .line{display:flex;padding:10px;gap:25px;width:100%;justify-content:space-between}:host .popup .line .picture{overflow:hidden;height:400px;max-height:400px}:host .popup .line .picture img{max-height:100%;width:auto}:host .popup .line .title{width:calc(100% - 275px)}:host .popup .col{display:flex;flex-direction:column;align-items:center;padding:0 20px}:host .popup .col .picture{display:flex;width:calc(100% - 30px)}:host .popup .col .picture img{width:100%}:host .popup .col .title{padding:25px 0;width:100%;justify-content:center}:host .popup .separator{height:3px;background-color:#000;width:calc(100% - 40px);display:flex;align-items:center;justify-content:center;margin-top:15px}:host .popup .descriptionContainer{padding:25px;width:100%;flex-grow:1;overflow-y:scroll;position:relative}:host .popup .descriptionContainer .description{white-space:pre-wrap;font-size:20px;word-spacing:3px;line-height:30px;text-align:justify}`;
     __getStatic() {
         return Popup;
     }
@@ -4709,7 +4709,8 @@ const TimelineEvent = class TimelineEvent extends Aventus.WebComponent {
     eventPicturePath = "";
     eventDate = "";
     isVertical = false;
-    static __style = `:host{position:relative}:host .event{cursor:pointer;border-radius:10px;border:1px solid #000;gap:20px;position:relative;height:var(--event-height);width:100%;display:flex;flex-direction:row;justify-content:center;align-items:center}:host .event .point{background-color:#000;height:var(--point-size);width:var(--point-size);border-radius:50%;margin:30px}:host .event .title{overflow-x:hidden;text-overflow:ellipsis;display:flex;align-items:center;padding:0 20px;flex-grow:1;height:100%}:host .event .date{width:200px}`;
+    last = false;
+    static __style = `:host{position:relative}:host .event{cursor:pointer;border-radius:10px;gap:20px;position:relative;height:var(--event-height);width:100%;display:flex;flex-direction:row;justify-content:center;align-items:center}:host .event .point{background-color:#000;height:var(--point-size);width:var(--point-size);border-radius:50%;margin:30px}:host .event .title{overflow-x:hidden;text-overflow:ellipsis;display:flex;align-items:center;padding:0 20px;width:calc(100% - 90px - 40px - 200px);height:100%}:host .event .date{width:200px}:host .event .line{position:absolute;width:90%;right:0;bottom:-10px;background-color:gray;border-radius:10px;filter:blur(1px);height:4px}`;
     __getStatic() {
         return TimelineEvent;
     }
@@ -4724,6 +4725,7 @@ const TimelineEvent = class TimelineEvent extends Aventus.WebComponent {
     <div class="point"></div>
     <div class="date" _id="timelineevent_1"></div>
     <div class="title" _id="timelineevent_2"></div>
+    <template _id="timelineevent_3"></template>
 </div>` }
     });
 }
@@ -4751,6 +4753,17 @@ this.__getStatic().__template.setActions({
     }
   ]
 });
+const templ0 = new Aventus.Template(this);
+templ0.setTemplate(`
+        <div class="line"></div>
+    `);
+this.__getStatic().__template.addIf({
+                    anchorId: 'timelineevent_3',
+                    parts: [{once: true,
+                    condition: (c) => c.comp.__d4a30a9a82d62bbbc6144289a370c6fcmethod0(),
+                    template: templ0
+                }]
+            });
  }
     getClassName() {
         return "TimelineEvent";
@@ -4762,44 +4775,27 @@ this.__getStatic().__template.setActions({
     pressed() {
         window.showPopup(this.eventTitle, this.eventDesc, this.eventPicturePath, this.isVertical);
     }
+    __d4a30a9a82d62bbbc6144289a370c6fcmethod0() {
+        return !this.last;
+    }
 }
 TimelineEvent.Namespace=`SchoolTripWebsite`;
 TimelineEvent.Tag=`av-timeline-event`;
 _.TimelineEvent=TimelineEvent;
 if(!window.customElements.get('av-timeline-event')){window.customElements.define('av-timeline-event', TimelineEvent);Aventus.WebComponentInstance.registerDefinition(TimelineEvent);}
 
-const Event = class Event extends Aventus.WebComponent {
-    static __style = ``;
-    __getStatic() {
-        return Event;
-    }
-    __getStyle() {
-        let arrStyle = super.__getStyle();
-        arrStyle.push(Event.__style);
-        return arrStyle;
-    }
-    __getHtml() {
-    this.__getStatic().__template.setHTML({
-        slots: { 'default':`<slot></slot>` }, 
-        blocks: { 'default':`<slot></slot>` }
-    });
-}
-    getClassName() {
-        return "Event";
-    }
-}
-Event.Namespace=`SchoolTripWebsite`;
-Event.Tag=`av-event`;
-_.Event=Event;
-if(!window.customElements.get('av-event')){window.customElements.define('av-event', Event);Aventus.WebComponentInstance.registerDefinition(Event);}
-
 const Timeline = class Timeline extends Aventus.WebComponent {
     events = [
         {
-            "date": "2021-01-01",
-            "title": "Event 1",
-            "image": "image1.jpg",
-            "description": "Description 1"
+            "date": "28 septembre 2024",
+            "title": "Visite du groupe mutuel",
+            "image": "mutuel.jpg",
+            "description": `Le premier arrêt de notre voyage se trouvait a Sion, au Groupe Mutuel. Après un chaleureux acceuil avec croissant et café, nous avons commencé par parler des différents défis informatique de l'entreprise.
+Ces défis se situaient notamment au niveau du volume des données à traiter ainsi que des attentes face a la digitalisation.
+Au niveau des données, nous avons pu parler du pipeline du traitement des données chez le Groupe Mutuel. 
+Il était aussi très intéressant de voir comment les projets sont mis en place dans une entreprise et de mettre en parallèle cela avec les méthodes étudiées à l'école. Nous avons ainsi pu voir comment une méthodologie AGILE fonctionne dans une entreprise.
+Une bonne partie de la présentation était aussi axée sur le domaine de l'IA, et comment cette technologie peut aider à automatiser et réduire certaines charges de travail. Nous en avons vu un exemple avec le traitement automatique des appels téléphonique, notamment pour automatiquement créer des résumés de ces appels.
+Le Groupe Mutuel est le plus grand employeur d'informaticiens en Valais, et semble très intéressés par des profils similaires aux notres. Cette discussion avec eux nous a permis de nous rendre compte des opportunités que nous pourrons avoir dans le futur.`
         },
         {
             "date": "28 septembre 2024",
@@ -4807,6 +4803,15 @@ const Timeline = class Timeline extends Aventus.WebComponent {
             "image": "drone.jpg",
             "isVertical": true,
             "description": "Arrivés dans le canton de Vaud, nous avons pu visiter FlyAbility, une start-up située près de Lausanne et impliquée dans la fabrication de drones. L'objectif principal de ces drones est de pouvoir explorer des zones dangereuses pour l'homme. J'ai trouvé cette visite très intéressante, on peut voir la passion qu'ils mettent dans la fabrication de leurs produits, cherchant toujours à les améliorer d'année en année que ce soit au niveau du hardware ou du software."
+        },
+        {
+            "date": "29 septembre 2024",
+            "title": "Nexthink",
+            "image": "nexthink.jpg",
+            "description": `Au second jour de notre voyage, nous fûmes amenés à visiter les bureaux de l’entreprise Nexthink, une « licorne » suisse dont nous ne connaissions alors que très peu. Nous arrivâmes aux alentours de 8h face à un étage quasiment vide, bariolé de toiles d’araignées et de petites citrouilles décoratives, nous étions alors à quelques jours d’halloween. 
+Un employé semblant un peu gêné nous accueilli pour nous remettre nos badges invité et nous guider en direction de la salle de pause. Véritable œuvre d’art que cette salle de pause, elle faisait la fierté – et à raison – des Happiness manager de la boite. Consoles de jeux, tables de ping-pong ou encore borne d’arcade, cette pièce était un véritable sans faute. L’espace cuisine de son coté, offrait nombre de friandises et boissons, jus de fruits et noix de toutes sortes et disposait tout naturellement des poubelles de tri correspondantes. 
+Après quelques visionnages du clip promotionnel de la boite sur une TV vers les tables pour certains, quelques parties de ping-pong pour les autres, le pauvre employé qui nous avait été assigné et qui n’avait définitivement pas envie d’être là nous fit faire un tour des bureaux de travail. Et nous eûmes à nouveau l’occasion de nous émerveiller face au travail des Happiness managers, qui ont tout donné pour nous offrir un environnement de travail au sommet de la culture corporate. Places de travail non assignées, pods de travail individuels, open spaces, mais le meilleur reste pour la fin : l’étage contient pas moins de 260 plantes. Nous avons même eu la chance de prendre une photo avec l’une d’entre elles ! 
+Ce fut une excellente conclusion pour ce tour d’entreprise qui touchait à sa fin, et nous fûmes escortés jusqu’à la sortie, la tristesse de ne toujours pas savoir ce que faisait Nexthink compensée par la photo de plante. Ce sera peut-être pour la prochaine fois.`
         },
         {
             "date": "29 septembre 2024",
@@ -4820,13 +4825,68 @@ const Timeline = class Timeline extends Aventus.WebComponent {
    Un point essentiel du réseau sans fil est l'Access Point. Ils améliorent la connectivité et la gestion des réseaux sans fil pour les entreprises.`
         },
         {
-            "date": "2021-01-01",
-            "title": "Event 1",
-            "image": "image1.jpg",
-            "description": "Description 1"
+            "date": "29 septembre 2024",
+            "title": "Le SDSC",
+            "image": "sdsc.png",
+            "isVertical": false,
+            "description": `Le Swiss Data Science Center (SDSC) est une initiative conjointe de l'EPFL et de l'ETH Zurich, visant à promouvoir la recherche et l'innovation en science des données en Suisse. En apportant leur expertise dans la data science, ils facilitent l'analyse et la valorisation des données pour des projets dans les domaines de la science, de la médecine, de l'industrie ou encore du secteur public. 
+Nous avons eu l’opportunité d’assister à une présentation technique de plusieurs projets développés par des data scientists du SDSC
+L'un des projets portait sur l'optimisation du touraillage (séchage du malt) dans le processus de maltage. L’approche développée par le SDSC, basée sur un modèle d'IA intégrant notamment un digital twin et un réseau de neurones, fournit des recommandations optimisées en tenant compte de nombreuses variables (conditions météorologiques, environnement de l'usine, caractéristiques du grain). Ces recommandations aident les opérateurs à ajuster les paramètres de séchage de façon optimale et permettent de réduire la consommation électrique du processus.
+Cette présentation était particulièrement intéressante, car elle nous a permis de découvrir une application concrète de concepts vus en cours comme les réseaux de neurones, de mieux comprendre leurs limites (notamment les challenges d'explainabilité des modèles) . D’autres aspects plus éthiques ont aussi été abordés, comme la délicate tâche de ne pas susciter de craintes chez les professionnels à l'égard de l'IA.`
+        },
+        {
+            "date": "29 septembre 2024",
+            "title": "Une soirée Bavaroise entre professeurs et étudiants",
+            "description": "Le chef de filière, Professeur Pierre-André Mudry, nous a invités à un souper de classe à La Bavaria, à Lausanne, en compagnie de plusieurs professeurs. Ce moment a permis des échanges variés sur les entreprises visitées, les cours suivis et nos projets d’avenir. Autour d’un verre, nous avons pu partager nos idées et discuter de nos perspectives, dans une ambiance conviviale. Une soirée agréable qui a renforcé l’esprit de groupe et permis des discussions intéressantes sur notre parcours et nos ambitions.",
+            "image": undefined
+        },
+        {
+            "date": "30 septembre 2024",
+            "title": "Notre première fois dans un datacenter",
+            "image": "infomaniak.jpg",
+            "description": `
+Mercredi matin, nous avons visité Infomaniak à Genève où ils nous ont accueillis dans leurs bureaux, avant de nous ouvrir les portes de leur centre de données, une chance qui se présente rarement. 
+Les bureaux d’Infomaniak se démarquent par leur décoration atypique et créative. Un grand openspace, entouré de salles de réunion thématiques : une salle à l’ambiance American Diner, un bar inspiré de Tokyo, une boucherie et même une salle basketball. Il y a d’autres détails amusants, comme des trous dans les cloisons, suggérant que quelqu’un a foncé à travers un mur ! 
+Pour encourager les employés, qui bénéficient de la possibilité de travailler deux jours par semaine en télétravail, à venir au bureau en début et fin de semaine, des croissants leurs sont offerts chaque lundi et vendredi. De plus, une sortie d’entreprise mensuelle est organisée pour renforcer la cohésion d’équipe et favoriser une ambiance de travail conviviale. 
+Ensuite nous nous sommes rendus au datacenter D4, situé dans le sous-sol d’un écoquartier en cours de développement. Ce datacenter incarne l’engagement écologique d’Infomaniak, avec une approche résolument tournée vers la durabilité. L’objectif est d’optimiser l’utilisation de l’énergie tout en réutilisant une grande partie de la chaleur générée pour alimenter le chauffage urbain de Genève. 
+La visite a débuté par la zone d’entrée d’air. L’air y passe d’abord à travers des filtres acoustiques pour minimiser les nuisances sonores, avant d’être dirigé vers des ventilateurs puissants qui prennent le relais en cas de défaillance du système de refroidissement principal. À l’extrémité opposée, on trouve une sortie d’air, structurée de manière similaire pour assurer une circulation optimale de l’air. 
+Une salle essentielle du datacenter abrite les deux pompes à chaleur d’une capacité de 1,7 MWh chacune. Ces pompes jouent un double rôle crucial : elles extraient la chaleur pour le réseau de chauffage urbain tout en fournissant le froid nécessaire aux serveurs. Une autre salle est dédiée au mélange de l’air chaud et froid, permettant d’atteindre une température stable et idéale pour le bon fonctionnement des équipements. 
+Les serveurs sont disposés dans des allées organisées en zones chaudes et froides, optimisant ainsi la gestion thermique. L’énergie électrique est également soigneusement gérée : elle provient de deux circuits indépendants et d’un générateur de secours activable à distance par Swissgrid en cas de pic de consommation, en attendant qu’une source de production supplémentaire prenne le relais. L’électricité passe ensuite par des onduleurs pour stabiliser le courant et garantir une alimentation continue et fiable aux serveurs. 
+Deux salles sont dédiées aux batteries, qui assurent une alimentation temporaire des serveurs le temps que le système de secours prenne le relais. Ces batteries sont les seules installations à bénéficier de la climatisation, nécessaire pour prolonger leur durée de vie. L’ensemble du datacenter a été conçu avec une redondance totale, garantissant que toute panne éventuelle n’impacte pas la continuité du service. 
+Infomaniak a également fait le choix de privilégier des fournisseurs locaux pour les équipements de construction et les serveurs, en favorisant les entreprises suisses et européennes. 
+Un datacenter aussi innovant et écologique mérite d’être reproduit. C’est pourquoi Infomaniak prévoit d’en construire un second en Valais, et aspire à partager leur modèle en open source afin que d’autres entreprises puissent s’inspirer de cette conception et construire des centres similaires. 
+Nous tenons à remercier chaleureusement Boris Siegenthaler, le fondateur d’Infomaniak, pour l’opportunité exceptionnelle de découvrir leur datacenter et pour toutes les informations précieuses qu’il a partagées avec nous. Sa passion et sa vision inspirante, ainsi que sa maîtrise des aspects techniques de ce projet, ont rendu cette visite inoubliable. 
+`,
+        },
+        {
+            "date": "30 setpembre 2024",
+            "title": "Un musée dans un tour d'entreprises ?!",
+            "image": "musee.jpg",
+            "description": "Lorsque l'on parle d'un tour des entreprises de Suisse, vous seriez pardonné de ne pas penser au musée de la télécommunication. Pourtant, c'est bel et bien là que nous nous sommes rendu le mercredi soir. En effet, notre filière est un résultat naturel de l'évolution de ce domaine, et nous avons pu découvrir les différentes machines qui ont évoluées de la genèse du domaine a aujourd'hui, sans oublier bien sûr les anecdotes de notre chef de filière, et ses souvenir joyeux d'une époque que nous n'avons malheureusement pas connue."
+        },
+        {
+            "date": "30 septembre 2024",
+            "title": "Google - The American Dream",
+            "image": "google.jpg",
+            "isVertical": true,
+            "description": `Nous avons eu l’opportunité de visiter les locaux de Google à Zurich. Cette visite nous a permis de découvrir un environnement de travail unique, où les espaces sont conçus pour favoriser la créativité et le bien-être des employés. Nos hôtes nous ont présenté les nombreux avantages et les conditions de travail offerts, avec un accent particulier sur l’équilibre vie professionnelle-vie personnelle.
+Lors de cette visite, nous avons également pu explorer les coulisses techniques de Google. Une présentation détaillée nous a révélé comment l'entreprise gère une infrastructure distribuée à l’échelle mondiale, un défi colossal soutenu par des outils puissants tels que Borg. Ce système de gestion d’infrastructures nous a impressionnés par sa capacité à orchestrer des millions de serveurs à travers le monde. Enfin, un apéritif convivial a clôturé cette expérience enrichissante.`
+        },
+        {
+            "date": "31 setpembre 2024",
+            "title": "Pourquoi ça coûte plus cher de prendre le train que la voiture",
+            "image": "cff.jpg",
+            "isVertical": true,
+            "description": `Et nous voici déjà arrivé à la dernière étape de notre voyage : Le centre CFF à Berne
+Nous étions ici pour deux choses : Recevoir un présentation technique sur la conception des différents services informatiques CFF, et répondre à la question : pourquoi est-ce que ce voyage aurait coûté plus cher en train qu'avec un bus privé.
+Pour la première, nous avons eu droit à une présentation aux petits oignons, nous expliquant le fonctionnement interne de plusieurs projets mené à bien par les CFF, comme par exemple la prévision du taux d'occupation des trains et des wagons, ou encore l'assistant IA pour le support téléphonique technique en cas de panne de locomotive. 
+Le tout en utilisant exactement les mêmes technologies que celles vues pendant nos cours (RAG, Random Forest Classifier etc...), cela nous a permis de voir des cas d'utilisations réels (et fonctionnels pour une fois) de tous les domaines approchés en cours.
+Quand à la réponse à la deuxième question, on y a eu droit aussi lors de leur présentation des programmes prévus pour les jeunes travailleurs sortant d'étude (ça tombe assez bien, il y en a une volée qui va pas tarder à sortir).
+Des programmes très attractifs donc, avec des conditions très bien aussi. Mais tout ça, ça doit coûter pas mal aux CFF, on comprend donc pourquoi les prix sont si élevés, et on vous promet de profiter aux mieux de nos superbe conditions de travail (payées entre autre par vos tickets de train), dans le cas où les CFFs nous accepterons...
+            `
         }
     ];
-    static __style = `:host{--point-size: 30px;--event-height: 200px;--gap: 10px;height:100%;width:100%;overflow-y:scroll}:host .timeline{background-color:green;display:flex;flex-direction:column;position:relative;gap:var(--gap);padding:10px}:host .timeline av-timeline-event:not(:first-child)::before{content:"";height:calc((var(--event-height) + var(--gap))/2);width:4px;background-color:#000;position:absolute;left:43px;top:0px}:host .timeline av-timeline-event:not(:last-child)::after{content:"";height:calc((var(--event-height) + var(--gap))/2);width:4px;background-color:#000;position:absolute;left:43px;top:calc((var(--event-height) + var(--gap))/2)}`;
+    static __style = `:host{--point-size: 30px;--event-height: 200px;--gap: 10px;height:auto;width:100%}:host .timeline{display:flex;flex-direction:column;position:relative;gap:var(--gap);padding:10px}:host .timeline av-timeline-event:not(:first-child)::before{content:"";height:calc((var(--event-height) + var(--gap))/2);width:4px;background-color:#000;position:absolute;left:43px;top:0px}:host .timeline av-timeline-event:not(:last-child)::after{content:"";height:calc((var(--event-height) + var(--gap))/2);width:4px;background-color:#000;position:absolute;left:43px;top:calc((var(--event-height) + var(--gap))/2)}`;
     __getStatic() {
         return Timeline;
     }
@@ -4857,7 +4917,8 @@ this.__getStatic().__template.setActions({
         return "Timeline";
     }
     buildContainer() {
-        for (let obj of this.events) {
+        for (let i in this.events) {
+            const obj = this.events[i];
             const el = new TimelineEvent();
             el.eventDate = obj["date"];
             el.eventDesc = obj["description"];
@@ -4865,6 +4926,7 @@ this.__getStatic().__template.setActions({
             el.eventTitle = obj["title"];
             el.isVertical = obj["isVertical"];
             el.rebuild();
+            el.last = parseInt(i) == (this.events.length - 1);
             this.container.appendChild(el);
         }
     }
@@ -4878,7 +4940,7 @@ _.Timeline=Timeline;
 if(!window.customElements.get('av-timeline')){window.customElements.define('av-timeline', Timeline);Aventus.WebComponentInstance.registerDefinition(Timeline);}
 
 const Main = class Main extends Aventus.WebComponent {
-    static __style = `:host .page{position:relative;width:100vw;height:100dvh;background-color:red}`;
+    static __style = `:host .page{position:relative;width:100vw;height:100dvh;overflow-y:auto;padding:10px}:host .firstSection{display:flex;justify-content:center}:host .firstSection .videoPreview{border-radius:15px;overflow:hidden;display:flex;align-items:center;justify-content:center;max-width:300px;position:relative}:host .firstSection .videoPreview::after{position:absolute;content:"";top:0;left:0;width:100%;height:100%;background-color:rgba(255,255,255,.5);z-index:-1}:host .firstSection .videoPreview video{z-index:-1;width:100%}:host .firstSection .videoPreview .more{box-shadow:0px 0px 20px 5px rgba(0,0,0,.75);text-decoration:none;cursor:pointer;user-select:none;background-color:#fff;padding:15px;display:flex;align-items:center;justify-content:center;border-radius:15px;color:#000;font-weight:bold;font-size:30px;position:absolute}:host .firstSection .intro{text-align:justify;display:flex;align-items:center;padding:10px 25px;font-size:20px}`;
     __getStatic() {
         return Main;
     }
@@ -4890,7 +4952,16 @@ const Main = class Main extends Aventus.WebComponent {
     __getHtml() {
     this.__getStatic().__template.setHTML({
         blocks: { 'default':`<div class="page">
-    AHAHAHAHHA
+    <h1>Le voyage dans les contrées légendaires</h1>
+    <div class="firstSection">
+        <div class="videoPreview">
+            <a href="pictures/isc_trip.mp4" target="_blank" class="more">More...</a>
+            <video src="pictures/isc_trip.mp4" muted autoplay loop></video>
+        </div>
+        <div class="intro">
+            Bienvenue sur la page récitant toues les aventures de la classe ISC. Sur cette page, vous allez revivre toutes nos aventures comme nous les avons vécues
+        </div>
+    </div>
     <av-timeline>
     </av-timeline>
 </div>` }

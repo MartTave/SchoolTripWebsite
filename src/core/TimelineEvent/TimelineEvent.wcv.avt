@@ -2,4 +2,7 @@
     <div class="point"></div>
     <div class="date" @element="dateContainer" ></div>
     <div class="title" @element="titleContainer" ></div>
+    if(!this.last) {
+        <div class="line"></div>
+    }
 </div>

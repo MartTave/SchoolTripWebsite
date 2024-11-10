@@ -2,11 +2,9 @@
     --point-size: 30px;
     --event-height: 200px;
     --gap: 10px;
-    height: 100%;
+    height: auto;
     width: 100%;
-    overflow-y: scroll;
 	.timeline {
-        background-color: green;
         display: flex;
         flex-direction: column;
         position: relative;

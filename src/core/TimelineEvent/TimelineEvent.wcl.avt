@@ -16,6 +16,7 @@ export class TimelineEvent extends Aventus.WebComponent implements Aventus.Defau
     public eventPicturePath: string = "";
     public eventDate: string = "";
     public isVertical: boolean = false;
+    public last: boolean = false;
 
 
     @ViewElement()

@@ -16,12 +16,17 @@ export class Timeline extends Aventus.WebComponent implements Aventus.DefaultCom
     @ViewElement()
     protected container!: HTMLDivElement;
 
-    protected events: any = [
+    protected events: Array<any> = [
         {
-            "date": "2021-01-01",
-            "title": "Event 1",
-            "image": "image1.jpg",
-            "description": "Description 1"
+            "date": "28 septembre 2024",
+            "title": "Visite du groupe mutuel",
+            "image": "mutuel.jpg",
+            "description": `Le premier arrêt de notre voyage se trouvait a Sion, au Groupe Mutuel. Après un chaleureux acceuil avec croissant et café, nous avons commencé par parler des différents défis informatique de l'entreprise.
+Ces défis se situaient notamment au niveau du volume des données à traiter ainsi que des attentes face a la digitalisation.
+Au niveau des données, nous avons pu parler du pipeline du traitement des données chez le Groupe Mutuel. 
+Il était aussi très intéressant de voir comment les projets sont mis en place dans une entreprise et de mettre en parallèle cela avec les méthodes étudiées à l'école. Nous avons ainsi pu voir comment une méthodologie AGILE fonctionne dans une entreprise.
+Une bonne partie de la présentation était aussi axée sur le domaine de l'IA, et comment cette technologie peut aider à automatiser et réduire certaines charges de travail. Nous en avons vu un exemple avec le traitement automatique des appels téléphonique, notamment pour automatiquement créer des résumés de ces appels.
+Le Groupe Mutuel est le plus grand employeur d'informaticiens en Valais, et semble très intéressés par des profils similaires aux notres. Cette discussion avec eux nous a permis de nous rendre compte des opportunités que nous pourrons avoir dans le futur.`
         },
         {
             "date": "28 septembre 2024",
@@ -29,6 +34,15 @@ export class Timeline extends Aventus.WebComponent implements Aventus.DefaultCom
             "image": "drone.jpg",
             "isVertical": true,
             "description": "Arrivés dans le canton de Vaud, nous avons pu visiter FlyAbility, une start-up située près de Lausanne et impliquée dans la fabrication de drones. L'objectif principal de ces drones est de pouvoir explorer des zones dangereuses pour l'homme. J'ai trouvé cette visite très intéressante, on peut voir la passion qu'ils mettent dans la fabrication de leurs produits, cherchant toujours à les améliorer d'année en année que ce soit au niveau du hardware ou du software."
+        },
+        {
+            "date": "29 septembre 2024",
+            "title": "Nexthink",
+            "image": "nexthink.jpg",
+            "description": `Au second jour de notre voyage, nous fûmes amenés à visiter les bureaux de l’entreprise Nexthink, une « licorne » suisse dont nous ne connaissions alors que très peu. Nous arrivâmes aux alentours de 8h face à un étage quasiment vide, bariolé de toiles d’araignées et de petites citrouilles décoratives, nous étions alors à quelques jours d’halloween. 
+Un employé semblant un peu gêné nous accueilli pour nous remettre nos badges invité et nous guider en direction de la salle de pause. Véritable œuvre d’art que cette salle de pause, elle faisait la fierté – et à raison – des Happiness manager de la boite. Consoles de jeux, tables de ping-pong ou encore borne d’arcade, cette pièce était un véritable sans faute. L’espace cuisine de son coté, offrait nombre de friandises et boissons, jus de fruits et noix de toutes sortes et disposait tout naturellement des poubelles de tri correspondantes. 
+Après quelques visionnages du clip promotionnel de la boite sur une TV vers les tables pour certains, quelques parties de ping-pong pour les autres, le pauvre employé qui nous avait été assigné et qui n’avait définitivement pas envie d’être là nous fit faire un tour des bureaux de travail. Et nous eûmes à nouveau l’occasion de nous émerveiller face au travail des Happiness managers, qui ont tout donné pour nous offrir un environnement de travail au sommet de la culture corporate. Places de travail non assignées, pods de travail individuels, open spaces, mais le meilleur reste pour la fin : l’étage contient pas moins de 260 plantes. Nous avons même eu la chance de prendre une photo avec l’une d’entre elles ! 
+Ce fut une excellente conclusion pour ce tour d’entreprise qui touchait à sa fin, et nous fûmes escortés jusqu’à la sortie, la tristesse de ne toujours pas savoir ce que faisait Nexthink compensée par la photo de plante. Ce sera peut-être pour la prochaine fois.`
         },
         {
             "date": "29 septembre 2024",
@@ -46,10 +60,78 @@ export class Timeline extends Aventus.WebComponent implements Aventus.DefaultCom
    Un point essentiel du réseau sans fil est l'Access Point. Ils améliorent la connectivité et la gestion des réseaux sans fil pour les entreprises.`
         },
         {
-            "date": "2021-01-01",
-            "title": "Event 1",
-            "image": "image1.jpg",
-            "description": "Description 1"
+            "date": "29 septembre 2024",
+            "title": "Le SDSC",
+            "image": "sdsc.png",
+            "isVertical": false,
+            "description": `Le Swiss Data Science Center (SDSC) est une initiative conjointe de l'EPFL et de l'ETH Zurich, visant à promouvoir la recherche et l'innovation en science des données en Suisse. En apportant leur expertise dans la data science, ils facilitent l'analyse et la valorisation des données pour des projets dans les domaines de la science, de la médecine, de l'industrie ou encore du secteur public. 
+
+Nous avons eu l’opportunité d’assister à une présentation technique de plusieurs projets développés par des data scientists du SDSC
+
+L'un des projets portait sur l'optimisation du touraillage (séchage du malt) dans le processus de maltage. L’approche développée par le SDSC, basée sur un modèle d'IA intégrant notamment un digital twin et un réseau de neurones, fournit des recommandations optimisées en tenant compte de nombreuses variables (conditions météorologiques, environnement de l'usine, caractéristiques du grain). Ces recommandations aident les opérateurs à ajuster les paramètres de séchage de façon optimale et permettent de réduire la consommation électrique du processus.
+
+Cette présentation était particulièrement intéressante, car elle nous a permis de découvrir une application concrète de concepts vus en cours comme les réseaux de neurones, de mieux comprendre leurs limites (notamment les challenges d'explainabilité des modèles) . D’autres aspects plus éthiques ont aussi été abordés, comme la délicate tâche de ne pas susciter de craintes chez les professionnels à l'égard de l'IA.`
+        },
+        {
+            "date": "29 septembre 2024",
+            "title": "Une soirée Bavaroise entre professeurs et étudiants",
+            "description": "Le chef de filière, Professeur Pierre-André Mudry, nous a invités à un souper de classe à La Bavaria, à Lausanne, en compagnie de plusieurs professeurs. Ce moment a permis des échanges variés sur les entreprises visitées, les cours suivis et nos projets d’avenir. Autour d’un verre, nous avons pu partager nos idées et discuter de nos perspectives, dans une ambiance conviviale. Une soirée agréable qui a renforcé l’esprit de groupe et permis des discussions intéressantes sur notre parcours et nos ambitions.",
+            "image": undefined
+        },
+        {
+            "date": "30 septembre 2024",
+            "title": "Notre première fois dans un datacenter",
+            "image": "infomaniak.jpg",
+            "description": `
+Mercredi matin, nous avons visité Infomaniak à Genève où ils nous ont accueillis dans leurs bureaux, avant de nous ouvrir les portes de leur centre de données, une chance qui se présente rarement. 
+
+Les bureaux d’Infomaniak se démarquent par leur décoration atypique et créative. Un grand openspace, entouré de salles de réunion thématiques : une salle à l’ambiance American Diner, un bar inspiré de Tokyo, une boucherie et même une salle basketball. Il y a d’autres détails amusants, comme des trous dans les cloisons, suggérant que quelqu’un a foncé à travers un mur ! 
+Pour encourager les employés, qui bénéficient de la possibilité de travailler deux jours par semaine en télétravail, à venir au bureau en début et fin de semaine, des croissants leurs sont offerts chaque lundi et vendredi. De plus, une sortie d’entreprise mensuelle est organisée pour renforcer la cohésion d’équipe et favoriser une ambiance de travail conviviale. 
+
+Ensuite nous nous sommes rendus au datacenter D4, situé dans le sous-sol d’un écoquartier en cours de développement. Ce datacenter incarne l’engagement écologique d’Infomaniak, avec une approche résolument tournée vers la durabilité. L’objectif est d’optimiser l’utilisation de l’énergie tout en réutilisant une grande partie de la chaleur générée pour alimenter le chauffage urbain de Genève. 
+
+La visite a débuté par la zone d’entrée d’air. L’air y passe d’abord à travers des filtres acoustiques pour minimiser les nuisances sonores, avant d’être dirigé vers des ventilateurs puissants qui prennent le relais en cas de défaillance du système de refroidissement principal. À l’extrémité opposée, on trouve une sortie d’air, structurée de manière similaire pour assurer une circulation optimale de l’air. 
+
+Une salle essentielle du datacenter abrite les deux pompes à chaleur d’une capacité de 1,7 MWh chacune. Ces pompes jouent un double rôle crucial : elles extraient la chaleur pour le réseau de chauffage urbain tout en fournissant le froid nécessaire aux serveurs. Une autre salle est dédiée au mélange de l’air chaud et froid, permettant d’atteindre une température stable et idéale pour le bon fonctionnement des équipements. 
+
+Les serveurs sont disposés dans des allées organisées en zones chaudes et froides, optimisant ainsi la gestion thermique. L’énergie électrique est également soigneusement gérée : elle provient de deux circuits indépendants et d’un générateur de secours activable à distance par Swissgrid en cas de pic de consommation, en attendant qu’une source de production supplémentaire prenne le relais. L’électricité passe ensuite par des onduleurs pour stabiliser le courant et garantir une alimentation continue et fiable aux serveurs. 
+
+Deux salles sont dédiées aux batteries, qui assurent une alimentation temporaire des serveurs le temps que le système de secours prenne le relais. Ces batteries sont les seules installations à bénéficier de la climatisation, nécessaire pour prolonger leur durée de vie. L’ensemble du datacenter a été conçu avec une redondance totale, garantissant que toute panne éventuelle n’impacte pas la continuité du service. 
+
+Infomaniak a également fait le choix de privilégier des fournisseurs locaux pour les équipements de construction et les serveurs, en favorisant les entreprises suisses et européennes. 
+
+Un datacenter aussi innovant et écologique mérite d’être reproduit. C’est pourquoi Infomaniak prévoit d’en construire un second en Valais, et aspire à partager leur modèle en open source afin que d’autres entreprises puissent s’inspirer de cette conception et construire des centres similaires. 
+
+Nous tenons à remercier chaleureusement Boris Siegenthaler, le fondateur d’Infomaniak, pour l’opportunité exceptionnelle de découvrir leur datacenter et pour toutes les informations précieuses qu’il a partagées avec nous. Sa passion et sa vision inspirante, ainsi que sa maîtrise des aspects techniques de ce projet, ont rendu cette visite inoubliable. 
+`,
+        
+        },
+        {
+            "date": "30 setpembre 2024",
+            "title": "Un musée dans un tour d'entreprises ?!",
+            "image": "musee.jpg",
+            "description": "Lorsque l'on parle d'un tour des entreprises de Suisse, vous seriez pardonné de ne pas penser au musée de la télécommunication. Pourtant, c'est bel et bien là que nous nous sommes rendu le mercredi soir. En effet, notre filière est un résultat naturel de l'évolution de ce domaine, et nous avons pu découvrir les différentes machines qui ont évoluées de la genèse du domaine a aujourd'hui, sans oublier bien sûr les anecdotes de notre chef de filière, et ses souvenir joyeux d'une époque que nous n'avons malheureusement pas connue."
+        },
+        {
+            "date": "30 septembre 2024",
+            "title": "Google - The American Dream",
+            "image": "google.jpg",
+            "isVertical": true,
+            "description": `Nous avons eu l’opportunité de visiter les locaux de Google à Zurich. Cette visite nous a permis de découvrir un environnement de travail unique, où les espaces sont conçus pour favoriser la créativité et le bien-être des employés. Nos hôtes nous ont présenté les nombreux avantages et les conditions de travail offerts, avec un accent particulier sur l’équilibre vie professionnelle-vie personnelle.
+Lors de cette visite, nous avons également pu explorer les coulisses techniques de Google. Une présentation détaillée nous a révélé comment l'entreprise gère une infrastructure distribuée à l’échelle mondiale, un défi colossal soutenu par des outils puissants tels que Borg. Ce système de gestion d’infrastructures nous a impressionnés par sa capacité à orchestrer des millions de serveurs à travers le monde. Enfin, un apéritif convivial a clôturé cette expérience enrichissante.`
+        },
+        {
+            "date": "31 setpembre 2024",
+            "title": "Pourquoi ça coûte plus cher de prendre le train que la voiture",
+            "image": "cff.jpg",
+            "isVertical": true,
+            "description": `Et nous voici déjà arrivé à la dernière étape de notre voyage : Le centre CFF à Berne
+Nous étions ici pour deux choses : Recevoir un présentation technique sur la conception des différents services informatiques CFF, et répondre à la question : pourquoi est-ce que ce voyage aurait coûté plus cher en train qu'avec un bus privé.
+Pour la première, nous avons eu droit à une présentation aux petits oignons, nous expliquant le fonctionnement interne de plusieurs projets mené à bien par les CFF, comme par exemple la prévision du taux d'occupation des trains et des wagons, ou encore l'assistant IA pour le support téléphonique technique en cas de panne de locomotive. 
+Le tout en utilisant exactement les mêmes technologies que celles vues pendant nos cours (RAG, Random Forest Classifier etc...), cela nous a permis de voir des cas d'utilisations réels (et fonctionnels pour une fois) de tous les domaines approchés en cours.
+Quand à la réponse à la deuxième question, on y a eu droit aussi lors de leur présentation des programmes prévus pour les jeunes travailleurs sortant d'étude (ça tombe assez bien, il y en a une volée qui va pas tarder à sortir).
+Des programmes très attractifs donc, avec des conditions très bien aussi. Mais tout ça, ça doit coûter pas mal aux CFF, on comprend donc pourquoi les prix sont si élevés, et on vous promet de profiter aux mieux de nos superbe conditions de travail (payées entre autre par vos tickets de train), dans le cas où les CFFs nous accepterons...
+            `
         }
     ];
     //#endregion
@@ -63,7 +145,8 @@ export class Timeline extends Aventus.WebComponent implements Aventus.DefaultCom
     //#region methods
     public buildContainer() {
 
-        for(let obj of this.events) {
+        for(let i in this.events) {
+            const obj = this.events[i];
             const el = new TimelineEvent();
             el.eventDate = obj["date"];
             el.eventDesc = obj["description"];
@@ -71,6 +154,7 @@ export class Timeline extends Aventus.WebComponent implements Aventus.DefaultCom
             el.eventTitle = obj["title"];
             el.isVertical = obj["isVertical"];
             el.rebuild();
+            el.last = parseInt(i) == (this.events.length - 1)
             this.container.appendChild(el);
         }
     }
